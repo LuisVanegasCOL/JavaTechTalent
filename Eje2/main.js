@@ -10,7 +10,7 @@ function apodo()
         console.log("tu apodo es luisito");
     }
 
-console.log("el valor de la variable let es " + " "+ nombre);
+console.log("el valor de la variable let es " + " "+ nombree);
 console.log("el valor de la variable var es" + " "+ apellido);
 console.log("el valor de la variable const es" + " "+ pi);
 
