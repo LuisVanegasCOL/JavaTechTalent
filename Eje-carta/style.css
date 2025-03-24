@@ -1,0 +1,13 @@
+
+        main{
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            margin-right: 20px;
+            height: 420px;
+        }
+        .container img{
+            height: 400px;
+            margin: auto;
+        }

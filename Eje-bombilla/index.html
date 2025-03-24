@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bombilla interactiva</title>
+</head>
+<body>
+    <div class="container">
+        <img id="interruptor" src="./boff.jpg" alt="Err">
+        <img id="bombilla" src="./off.jpg" alt="Err">
+    </div>
+    <div class="controles">
+        <h2>Ligth Level <span id="levelIndicator">0</span></h2>
+        <input type="range" name="ligthLevel" id="ligthLevel" min="0" max="7">
+        <h2>Bulb Zoom <span id="zoomIndicator">5</span></h2>
+        <input type="range" name="zoomLevel" id="zoomLevel" min="0" max="5" value="5">
+
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
