@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1> Arrays </h1>
+    <div>
+
+        <h2> Agregar items</h2>
+
+        <button type "button" onclick=" Agregarpush();"> Agregar </button>
+
+        <button type "button" onclick=" Agregarunshift();"> Unshift </button>
+
+        <button type "button" onclick="Agregardesde();"> Insert at </button>
+
+        <input type="number" id="insertIndex" min="0" placeholder="Posición">
+        <!-- Campo de entrada numérica donde el usuario puede ingresar una posición para insertar un icono en el array -->
+        
+
+    </div>
+
+    <div>
+        <h2> Remover items</h2>
+
+        <button type "button" onclick=" Removerpop(); "> Pop </button>
+
+        <button type "button" onclick=" Removershift();"> Shift </button>
+
+        <button type "button" onclick=" Removerdesde();  "> Remove at </button>
+
+        <input type="number" id="DeletIndex" min="0" placeholder="Posición">
+        <!-- Campo de entrada numérica donde el usuario puede ingresar una posición para insertar un icono en el array -->
+    </div>
+
+   
+    <h2> Estado de array</h2>
+    <div id = mostrarmatriz> </div>
+
+
+
+    <script src="main.js"> </script>
+
+</html>

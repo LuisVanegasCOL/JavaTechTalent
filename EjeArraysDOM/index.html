@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Declara que este documento es un archivo HTML5 -->
+<html lang="es">
+<!-- Inicia el documento HTML y especifica que el idioma del contenido es español -->
+  <head>
+    <!-- Sección de metadatos de la página -->
+    <meta charset="UTF-8">
+    <!-- Define el conjunto de caracteres como UTF-8, permitiendo caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que la página sea responsive (adaptable a distintos tamaños de pantalla) -->
+    <title>Ejercicio de Arrays con Iconos</title>
+    <!-- Título de la página que aparecerá en la pestaña del navegador -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Vincula un archivo de estilo CSS externo llamado 'style.css' para definir el diseño de la página -->
+  </head>
+  <body>
+    <!-- Cuerpo de la página, donde se encuentra el contenido visible -->
+    <div class="container">
+      <!-- Contenedor principal de la página -->
+
+      <h1>Ejercicio de Arrays con Iconos</h1>
+      <!-- Título principal de la página -->
+
+      <div>
+        <!-- Contenedor para la sección de agregar iconos -->
+        <h3>add item</h3>
+        <!-- Título para esta sección -->
+
+        <button onclick="addPush()">push</button>
+        <!-- Botón que, al hacer clic, ejecuta la función 'addPush()' para agregar un icono al final del array -->
+
+        <button onclick="addUnshift()">Unshift (Inicio)</button>
+        <!-- Botón que, al hacer clic, ejecuta la función 'addUnshift()' para agregar un icono al principio del array -->
+
+        <input type="number" id="insertIndex" min="0" placeholder="Posición">
+        <!-- Campo de entrada numérica donde el usuario puede ingresar una posición para insertar un icono en el array -->
+
+        <button onclick="addInsert()">Insertar en Índice</button>
+        <!-- Botón que, al hacer clic, ejecuta la función 'addInsert()' para agregar un icono en una posición específica -->
+      </div>
+
+      <div>
+        <!-- Contenedor para la sección de eliminar iconos -->
+        <h3>Eliminar icono</h3>
+        <!-- Título para esta sección -->
+
+        <button onclick="removePop()">Pop (Final)</button>
+        <!-- Botón que, al hacer clic, ejecuta la función 'removePop()' para eliminar el último icono del array -->
+
+        <button onclick="removeShift()">Shift (Inicio)</button>
+        <!-- Botón que, al hacer clic, ejecuta la función 'removeShift()' para eliminar el primer icono del array -->
+
+        <input type="number" id="removeIndex" min="0" placeholder="Posición">
+        <!-- Campo de entrada numérica donde el usuario puede ingresar una posición para eliminar un icono en el array -->
+
+        <button onclick="removeAt()">Eliminar en Índice</button>
+        <!-- Botón que, al hacer clic, ejecuta la función 'removeAt()' para eliminar un icono en una posición específica -->
+      </div>
+
+      <h3>Matriz:</h3>
+      <!-- Título para mostrar el array -->
+      <div id="arrayDisplay"></div>
+      <!-- Contenedor donde se mostrarán los iconos del array dinámicamente -->
+
+    </div>
+
+    <script src="main.js"></script>
+    <!-- Vincula un archivo JavaScript externo llamado 'main.js' que contiene la lógica para interactuar con los iconos -->
+  </body>
+</html>
