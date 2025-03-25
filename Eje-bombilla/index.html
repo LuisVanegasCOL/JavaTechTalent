@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="en"> <!-- Define el idioma del documento como inglés -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres del documento -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsiva en dispositivos móviles -->
     <link rel="stylesheet" href="style.css">
-    <title>Bombilla interactiva</title>
+    <title>Bombilla Interactiva</title>
 </head>
 <body>
     <div class="container">
-        <img id="interruptor" src="./boff.jpg" alt="Err">
-        <img id="bombilla" src="./off.jpg" alt="Err">
+        <img id="interruptor" src="./boff.jpg" alt="Err"> <!-- Imagen del interruptor -->
+        <img id="bombilla" src="./off.jpg" alt="Err"> <!-- Imagen de la bombilla apagada -->
     </div>
     <div class="controles">
-        <h2>Ligth Level <span id="levelIndicator">0</span></h2>
-        <input type="range" name="ligthLevel" id="ligthLevel" min="0" max="7">
-        <h2>Bulb Zoom <span id="zoomIndicator">5</span></h2>
-        <input type="range" name="zoomLevel" id="zoomLevel" min="0" max="5" value="5">
-
+        <h2>Light Level <span id="levelIndicator">0</span></h2> <!-- Muestra el nivel de luz -->
+        <input type="range" name="ligthLevel" id="ligthLevel" min="0" max="7"> <!-- Control deslizante para el nivel de luz -->
+        <h2>Bulb Zoom <span id="zoomIndicator">5</span></h2> <!-- Muestra el nivel de zoom de la bombilla -->
+        <input type="range" name="zoomLevel" id="zoomLevel" min="0" max="5" value="5"> <!-- Control deslizante para el zoom de la bombilla -->
     </div>
-    <script src="./main.js"></script>
+
+   <script src="main.js"></script>
 </body>
 </html>

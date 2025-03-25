@@ -1,68 +1,122 @@
-/* Estilos minimalistas y elegantes */
-body {
- 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    font-family: "Arial", sans-serif;
-    color: #333;
-    margin: 0;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-img {
-    width: 150px;
-    transition: all 0.3s ease-in-out;
-}
-
-.controles {
-    margin-top: 20px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-input[type="range"] {
-    width: 100%;
-    height: 6px;
-    background: #ddd;
-    border-radius: 5px;
-    outline: none;
-    transition: background 0.3s;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #333;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-input[type="range"]:hover {
-    background: #ccc;
-}
+        /* Estilos generales */
+        * {
+            margin: 0; /* Elimina los márgenes predeterminados */
+            padding: 0; /* Elimina el relleno predeterminado */
+            box-sizing: border-box; /* Incluye el borde y el relleno dentro del tamaño total de los elementos */
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif; /* Establece la fuente del cuerpo del documento */
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            display: flex; /* Utiliza Flexbox para la disposición de los elementos */
+            justify-content: center; /* Centra los elementos horizontalmente */
+            align-items: center; /* Centra los elementos verticalmente */
+            height: 100vh; /* Altura completa de la ventana del navegador */
+            flex-direction: column; /* Coloca los elementos de forma vertical */
+            overflow: hidden; /* Oculta cualquier contenido que se desborde */
+        }
+        
+        /* Contenedor de la bombilla e interruptor */
+        .container {
+            display: flex; /* Usa Flexbox para la disposición */
+            align-items: center; /* Centra los elementos verticalmente */
+            justify-content: center; /* Centra los elementos horizontalmente */
+            margin-bottom: 30px; /* Márgenes debajo del contenedor */
+        }
+        
+        /* Panel de controles */
+        .control-panel {
+            display: flex; /* Usa Flexbox */
+            align-items: center; /* Centra los elementos verticalmente */
+            margin-right: 30px; /* Márgenes a la derecha */
+            flex-direction: column; /* Disposición de los elementos en columna */
+            text-align: center; /* Centra el texto */
+        }
+        
+        /* Imagen del interruptor */
+        #interruptor {
+            cursor: pointer; /* Cambia el cursor al hacer hover */
+            width: 100px; /* Ancho de la imagen */
+            height: 100px; /* Altura de la imagen */
+            margin-bottom: 20px; /* Márgenes debajo de la imagen */
+            transition: transform 0.3s ease; /* Transición suave para el transform */
+        }
+        
+        /* Contenedor de los sliders */
+        .sliders {
+            display: flex; /* Usa Flexbox */
+            flex-direction: column; /* Disposición en columna */
+            align-items: center; /* Centra los elementos verticalmente */
+        }
+        
+        /* Imagen de la bombilla */
+        #bombilla {
+            width: 350px; /* Ancho de la bombilla */
+            height: 350px; /* Altura de la bombilla */
+            margin-left: 20px; /* Márgenes a la izquierda */
+            transition: opacity 0.5s ease, transform 0.3s ease-in-out; /* Transiciones suaves para la opacidad y el zoom */
+        }
+        
+        /* Controles */
+        .controles {
+            text-align: center; /* Centra el texto */
+            padding: 20px; /* Espaciado interior */
+            background-color: #222; /* Fondo oscuro */
+            border-radius: 12px; /* Bordes redondeados */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* Sombra alrededor del panel */
+            transition: transform 0.3s ease; /* Transición para el transform */
+        }
+        
+        h2 {
+            margin-bottom: 10px; /* Márgenes debajo del título */
+            font-size: 20px; /* Tamaño de fuente */
+            font-weight: 600; /* Grosor de la fuente */
+        }
+        
+        input[type="range"] {
+            width: 200px; /* Ancho del slider */
+            margin: 10px 0; /* Márgenes superior e inferior */
+            background-color: #444; /* Color de fondo del slider */
+            border: none; /* Sin borde */
+            border-radius: 8px; /* Bordes redondeados */
+            height: 8px; /* Altura del slider */
+            transition: background-color 0.3s ease; /* Transición para el color de fondo */
+        }
+        
+        input[type="range"]:focus {
+            background-color: #888; /* Color cuando el slider está enfocado */
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            background-color: #fff; /* Color del pulgar del slider */
+            border-radius: 50%; /* Forma circular del pulgar */
+            height: 18px; /* Altura del pulgar */
+            width: 18px; /* Ancho del pulgar */
+            cursor: pointer; /* Cursor de mano */
+        }
+        
+        input[type="range"]:hover {
+            background-color: #666; /* Color de fondo cuando se pasa el mouse sobre el slider */
+        }
+        
+        /* Responsividad */
+        @media (max-width: 600px) {
+            #bombilla {
+                width: 250px; /* Reduce el tamaño de la bombilla en pantallas pequeñas */
+                height: 250px;
+            }
+        
+            #interruptor {
+                width: 80px; /* Reduce el tamaño del interruptor */
+                height: 80px;
+            }
+        
+            .control-panel {
+                margin-right: 10px; /* Reduce los márgenes en el panel de control */
+            }
+        
+            input[type="range"] {
+                width: 100%; /* Los sliders ocupan el 100% del ancho en pantallas pequeñas */
+            }
+        }
