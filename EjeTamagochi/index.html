@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi Interactivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #a8d5ba;
+            margin: 0;
+        }
+        .container {
+            width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 150px);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .grid div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .eat { background-color: lightgreen; }
+        .play { background-color: lightyellow; }
+        .fight { background-color: lightcoral; }
+        .sleep { background-color: lightblue; }
+        .status-bar {
+            width: 80%;
+            height: 20px;
+            background: lightgray;
+            border-radius: 5px;
+            margin: 5px auto;
+            position: relative;
+        }
+        .fill {
+            height: 100%;
+            background: green;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+        .pet {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Tamagotchi Interactivo</h2>
+        <img id="pet" class="pet" src="https://via.placeholder.com/150" alt="Tamagotchi">
+        <p id="name">Fluffy</p>
+        <div class="status-bar"><div id="hunger" class="fill" style="width: 50%;"></div></div>
+        <div class="status-bar"><div id="fun" class="fill" style="width: 50%;"></div></div>
+        <div class="status-bar"><div id="energy" class="fill" style="width: 50%;"></div></div>
+        <div class="grid">
+            <div class="eat" onclick="eat()">EAT</div>
+            <div class="play" onclick="play()">PLAY</div>
+            <div class="fight" onclick="fight()">FIGHT</div>
+            <div class="sleep" onclick="sleep()">SLEEP</div>
+        </div>
+    </div>
+    
+    <script>
+        let petData = {
+            name: "Fluffy",
+            hunger: 50,
+            fun: 50,
+            energy: 50
+        };
+
+        function updateStatus() {
+            document.getElementById("hunger").style.width = petData.hunger + "%";
+            document.getElementById("fun").style.width = petData.fun + "%";
+            document.getElementById("energy").style.width = petData.energy + "%";
+        }
+        
+        function savePetData() {
+            localStorage.setItem("tamagotchi", JSON.stringify(petData));
+        }
+
+        function loadPetData() {
+            const savedData = localStorage.getItem("tamagotchi");
+            if (savedData) {
+                petData = JSON.parse(savedData);
+                updateStatus();
+            }
+        }
+        
+        function eat() {
+            petData.hunger = Math.min(100, petData.hunger + 15);
+            petData.fun = Math.max(0, petData.fun - 5);
+            updateStatus();
+            savePetData();
+        }
+        
+        function play() {
+            petData.fun = Math.min(100, petData.fun + 15);
+            petData.energy = Math.max(0, petData.energy - 10);
+            updateStatus();
+            savePetData();
+        }
+        
+        function fight() {
+            petData.fun = Math.min(100, petData.fun + 5);
+            petData.hunger = Math.max(0, petData.hunger - 10);
+            petData.energy = Math.max(0, petData.energy - 20);
+            updateStatus();
+            savePetData();
+        }
+        
+        function sleep() {
+            petData.energy = Math.min(100, petData.energy + 20);
+            petData.hunger = Math.max(0, petData.hunger - 15);
+            updateStatus();
+            savePetData();
+        }
+
+        async function fetchPetImage() {
+            try {
+                let response = await fetch('https://api.thecatapi.com/v1/images/search');
+                let data = await response.json();
+                document.getElementById("pet").src = data[0].url;
+            } catch (error) {
+                console.error("Error fetching image:", error);
+            }
+        }
+
+        window.onload = function() {
+            loadPetData();
+            fetchPetImage();
+        };
+    </script>
+</body>
+</html>
