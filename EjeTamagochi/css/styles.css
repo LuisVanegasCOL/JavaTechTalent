@@ -1,0 +1,193 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #f1f1f1;
+    padding: 40px;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    flex-grow: 1;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(220, 220, 220, 0.8));
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.eat {
+    background-color: #FF9900; /* Color similar al de Amazon */
+}
+
+.play {
+    background-color: #FFB81C; /* Color más suave */
+}
+
+.sleep {
+    background-color: #0066c0; /* Azul similar al de Amazon */
+}
+
+.fight {
+    background-color: #FF5700; /* Color más cálido */
+}
+
+.button-container {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 22px;
+    padding: 18px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #f1f1f1;
+}
+
+.progress-container {
+    width: 100%;
+    max-width: 180px;
+    height: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 2px solid #e0e0e0;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #FF9900; /* Coincide con el color principal de Amazon */
+    width: 100%;
+    transition: width 0.4s ease-in-out;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pet-image {
+    width: 200px;
+    height: auto;
+}
+
+#reset-button {
+    margin-top: 25px;
+    padding: 18px 40px;
+    background-color: #FF5C5C;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    display: none;
+}
+
+#reset-button:hover {
+    background-color: #F44336;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        width: 95%;
+        margin: 10px;
+    }
+
+    .section {
+        padding: 30px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 15px 18px;
+    }
+
+    .progress-container {
+        width: 100%;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .section {
+        padding: 25px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 12px 15px;
+    }
+
+    .progress-container {
+        width: 100%;
+        max-width: 120px;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #232F3E; /* Tonalidad de Amazon */
+    color: white;
+    padding: 15px 0;
+    font-size: 14px;
+    text-align: center;
+    border-top: 3px solid #FF9900; /* Coincide con los colores */
+}
+
+footer p {
+    margin: 0;
+}
