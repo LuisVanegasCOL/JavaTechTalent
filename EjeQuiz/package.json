@@ -1,0 +1,11 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build-ts": "tsc",
+    "watch-ts": "tsc --watch"
+  },
+  "dependencies": {
+    "typescript": "^5.2.0"
+  }
+}
